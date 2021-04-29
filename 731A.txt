@@ -1,0 +1,20 @@
+//https://codeforces.com/contest/731/problem/A
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <cstring>
+using namespace std;
+
+int main()
+{
+    char s[1000];
+    cin>>s;
+    int ans = 0, current = 0;
+    for(int i = 0; i<strlen(s); i++)
+    {
+        int nextchar = s[i] - 'a';
+        ans += min( abs(current-nextchar), min( 26+current-nextchar, 26-current+nextchar ) );
+        current = nextchar;
+    }
+    cout<<ans<<endl;
+}

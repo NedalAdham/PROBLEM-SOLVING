@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+
+int main()
+{
+    int t ; cin >> t ;
+    while (t--){
+        int n ; cin >> n;
+        string s1 , s2 ;
+        cin >> s1 ;
+        for (auto findeven = s1.begin () ; findeven !=s1.end(); findeven++){
+            if (*findeven % 2 == 0)continue;
+            s2.push_back(*findeven);
+
+        }
+        if(s2.length()==0||s2.length()==1)cout<<"-1";
+        if (s2.length()%2!=0) s2.pop_back();
+
+        cout<<s2<<endl;
+
+    }
+
+}
